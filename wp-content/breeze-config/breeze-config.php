@@ -1,7 +1,7 @@
 <?php 
 defined( 'ABSPATH' ) || exit;
 return array (
-  'homepage' => 'https://wordpress-375621-1346124.cloudwaysapps.com',
+  'homepage' => 'https://wordpress-375621-1357181.cloudwaysapps.com',
   'cache_options' => 
   array (
     'breeze-active' => '1',

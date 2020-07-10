@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-	<title><?php wp_title('•', true, 'right'); bloginfo('name'); ?></title>
+	<title><?php wp_title('•', true, 'right');?></title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="<?php bloginfo('template_url')?>/favicon.png" />
 	<?php wp_head(); ?>
 </head>
 
@@ -17,7 +18,7 @@
 <![endif]-->
 
 <nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -25,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo home_url('/'); ?>"><img src="<?php echo bloginfo('template_url')?>/img/logo.png" alt=""> </a>
+      <a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
     </div>
     <div class="collapse navbar-collapse" id="navbar">
       <?php
@@ -37,17 +38,15 @@
                 'walker'            => new wp_bootstrap_navwalker())
             );
         ?>
-
-        <?php
-            wp_nav_menu( array(
-                'theme_location'    => 'navbar-right',
-                'depth'             => 2,
-                'menu_class'        => 'nav navbar-nav navbar-right',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'walker'            => new wp_bootstrap_navwalker())
-            );
-        ?>
     </div><!-- /.navbar-collapse -->
+    <?php
+        wp_nav_menu( array(
+          'theme_location'    => 'navbar-right',
+          'depth'             => 2,
+          'menu_class'        => 'social-menu'
+          )
+        );
+    ?>
   </div><!-- /.container -->
 </nav>
 
@@ -57,7 +56,6 @@ Site Title
 If you are displaying your site title in the "brand" link in the Bootstrap navbar,
 then you probably don't require a site title. Alternatively you can use the example below.
 See also the accompanying CSS example in css/bst.css .
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
